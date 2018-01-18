@@ -172,6 +172,7 @@
         tap.delegate = self;
         [_backgroundView addGestureRecognizer:tap];
         _backgroundView.backgroundColor = self.backgroundViewColor;
+        
     }
     return _backgroundView;
 }

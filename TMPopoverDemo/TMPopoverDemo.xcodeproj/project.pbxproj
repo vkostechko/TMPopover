@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F01284820114DBC004E35A3 /* TMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F01284720114DBC004E35A3 /* TMTableViewCell.m */; };
 		2FB3B49320110E920045F7EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B49220110E920045F7EC /* AppDelegate.m */; };
 		2FB3B49620110E920045F7EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B49520110E920045F7EC /* ViewController.m */; };
 		2FB3B49920110E920045F7EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3B49720110E920045F7EC /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F01284620114DBC004E35A3 /* TMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMTableViewCell.h; sourceTree = "<group>"; };
+		2F01284720114DBC004E35A3 /* TMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMTableViewCell.m; sourceTree = "<group>"; };
 		2FB3B48E20110E920045F7EC /* TMPopoverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMPopoverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB3B49120110E920045F7EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FB3B49220110E920045F7EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				2FB3B4A720110EAC0045F7EC /* TMPopover */,
 				2FB3B49120110E920045F7EC /* AppDelegate.h */,
 				2FB3B49220110E920045F7EC /* AppDelegate.m */,
+				2F01284620114DBC004E35A3 /* TMTableViewCell.h */,
+				2F01284720114DBC004E35A3 /* TMTableViewCell.m */,
 				2FB3B49420110E920045F7EC /* ViewController.h */,
 				2FB3B49520110E920045F7EC /* ViewController.m */,
 				2FB3B49720110E920045F7EC /* Main.storyboard */,
@@ -164,6 +169,7 @@
 			files = (
 				2FB3B4AE20110ECC0045F7EC /* TMPopUpView.m in Sources */,
 				2FB3B49620110E920045F7EC /* ViewController.m in Sources */,
+				2F01284820114DBC004E35A3 /* TMTableViewCell.m in Sources */,
 				2FB3B4A120110E920045F7EC /* main.m in Sources */,
 				2FB3B4AD20110ECC0045F7EC /* TMPopover.m in Sources */,
 				2FB3B49320110E920045F7EC /* AppDelegate.m in Sources */,
