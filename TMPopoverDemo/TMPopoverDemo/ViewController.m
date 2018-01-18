@@ -19,10 +19,10 @@
 
 - (IBAction)showButtonDidTap:(id)sender {
 
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300.f, 150.f)];
+    UIView *contentView = [UIView new];
     contentView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     
-    [TMPopover showForSender:sender withCustomView:contentView doneBlock:^(NSInteger selectedIndex) {
+    [TMPopover showForSender:sender withCustomView:contentView size:CGSizeMake(230.f, 150.f) doneBlock:^(NSInteger selectedIndex) {
         
     } dismissBlock:^{
         

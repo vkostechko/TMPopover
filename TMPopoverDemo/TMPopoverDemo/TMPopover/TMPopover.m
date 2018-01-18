@@ -20,6 +20,8 @@
 @property (nonatomic, assign) CGRect senderFrame;
 @property (nonatomic, strong) UIView *contentView;
 
+@property (nonatomic, assign) CGSize menuSize;
+
 @property (nonatomic, assign) BOOL isCurrentlyOnScreen;
 
 @property (nonatomic, strong) UIColor *backgroundViewColor;
@@ -60,9 +62,9 @@
 
 #pragma mark - Public
 
-+ (void)showForSender:(UIView *)sender withCustomView:(UIView *)contentView doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock
++ (void)showForSender:(UIView *)sender withCustomView:(UIView *)contentView size:(CGSize)size doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock
 {
-    [[self sharedInstance] showForSender:sender senderFrame:CGRectNull contentView:contentView doneBlock:doneBlock dismissBlock:dismissBlock];
+    [[self sharedInstance] showForSender:sender size:size contentView:contentView doneBlock:doneBlock dismissBlock:dismissBlock];
 }
 
 + (void)dismiss
@@ -83,14 +85,15 @@
 
 #pragma mark - Private
 
-- (void) showForSender:(UIView *)sender senderFrame:(CGRect )senderFrame contentView:(UIView *)contentView doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock
+- (void) showForSender:(UIView *)sender size:(CGSize)size contentView:(UIView *)contentView doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.backgroundView addSubview:self.popUpView];
         [[self backgroundWindow] addSubview:self.backgroundView];
         
         self.sender = sender;
-        self.senderFrame = senderFrame;
+        self.senderFrame = CGRectNull;
+        self.menuSize = size;
         self.contentView = contentView;
         [self.popUpView.contentView addSubview:self.contentView];
         
@@ -203,10 +206,8 @@
         senderRect.origin.y = TM_SCREEN_HEIGHT;
     }
     
-#warning STUB DATA
-    //TODO: implement
-    CGFloat menuHeight = 300.f;
-    CGFloat menuWidth = 300.f;
+    CGFloat menuHeight = self.menuSize.height;
+    CGFloat menuWidth = self.menuSize.width;
     CGPoint menuArrowPoint = CGPointMake(senderRect.origin.x + (senderRect.size.width) / 2, 0);
     CGFloat menuX = 0;
     CGRect menuRect = CGRectZero;
