@@ -157,8 +157,13 @@
     _backgroundLayer = [CAShapeLayer layer];
     _backgroundLayer.path = path.CGPath;
     _backgroundLayer.lineWidth = TM_DEFAULT_BORDER_WIDTH;
-    _backgroundLayer.fillColor = [UIColor whiteColor].CGColor;
-    _backgroundLayer.strokeColor = [UIColor blackColor].CGColor;
+    _backgroundLayer.fillColor = [self popUpBackgroundColor].CGColor;
+    _backgroundLayer.strokeColor = [self popUpBorderColor].CGColor;
+    
+    _backgroundLayer.shadowOffset = CGSizeMake(0.f, 4.f);
+    _backgroundLayer.shadowColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.05f].CGColor;
+    _backgroundLayer.shadowOpacity = 1.f;
+    _backgroundLayer.shadowRadius = 8.f;
     
     [self.layer insertSublayer:_backgroundLayer atIndex:0];
     
@@ -174,6 +179,21 @@
 - (CGFloat)menuArrowWidth
 {
     return TM_DEFAULT_ARROW_WIDTH;
+}
+
+- (UIColor *)popUpBackgroundColor
+{
+    if (!_popUpBackgroundColor) {
+        _popUpBackgroundColor = TM_POPOVER_BACKGROUND_COLOR;
+    }
+    return _popUpBackgroundColor;
+}
+
+- (UIColor *)popUpBorderColor {
+    if (!_popUpBorderColor) {
+        _popUpBorderColor = TM_POPOVER_BORDER_COLOR;
+    }
+    return _popUpBorderColor;
 }
 
 @end

@@ -22,11 +22,14 @@ typedef NS_ENUM(NSUInteger, TMPopOverMenuArrowDirection) {
     TMPopOverMenuArrowDirectionDown,
 };
 
-#define TM_DEFAULT_ARROW_HEIGHT 10.f
+#define TM_DEFAULT_ARROW_HEIGHT 6.f
 #define TM_DEFAULT_ARROW_ROUND_RADIUS 4.f
 #define TM_DEFAULT_ARROW_WIDTH 8.f
-#define TM_DEFAULT_CORNER_RADIUS 15.f
-#define TM_DEFAULT_BORDER_WIDTH 0.8
+#define TM_DEFAULT_CORNER_RADIUS 4.f
+#define TM_DEFAULT_BORDER_WIDTH 0.5f
+
+#define TM_POPOVER_BACKGROUND_COLOR [UIColor whiteColor]
+#define TM_POPOVER_BORDER_COLOR [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.f]
 
 #define TM_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define TM_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
