@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, TMPopOverMenuArrowDirection) {
 #define TM_DEFAULT_ARROW_HEIGHT 10.f
 #define TM_DEFAULT_ARROW_ROUND_RADIUS 4.f
 #define TM_DEFAULT_ARROW_WIDTH 8.f
-#define TM_DEFAULT_CORNER_RADIUS 5.f
+#define TM_DEFAULT_CORNER_RADIUS 15.f
 #define TM_DEFAULT_BORDER_WIDTH 0.8
 
 #define TM_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width

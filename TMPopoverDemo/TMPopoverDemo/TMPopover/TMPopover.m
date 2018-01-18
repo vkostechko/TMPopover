@@ -92,6 +92,46 @@
         self.sender = sender;
         self.senderFrame = senderFrame;
         self.contentView = contentView;
+        [self.popUpView.contentView addSubview:self.contentView];
+        
+        //Bottom
+        NSLayoutConstraint *bottom = [NSLayoutConstraint
+                                     constraintWithItem:self.contentView
+                                     attribute:NSLayoutAttributeBottom
+                                     relatedBy:NSLayoutRelationEqual
+                                     toItem:self.popUpView.contentView
+                                     attribute:NSLayoutAttributeBottom
+                                     multiplier:1.0f
+                                     constant:0.f];
+        //Top
+        NSLayoutConstraint *top = [NSLayoutConstraint
+                                  constraintWithItem:self.contentView
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                  toItem:self.popUpView.contentView
+                                  attribute:NSLayoutAttributeTop
+                                  multiplier:1.0f
+                                  constant:TM_DEFAULT_ARROW_HEIGHT];
+        //Left
+        NSLayoutConstraint *left = [NSLayoutConstraint
+                                   constraintWithItem:self.contentView
+                                   attribute:NSLayoutAttributeLeft
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:self.popUpView.contentView
+                                   attribute:NSLayoutAttributeLeft
+                                   multiplier:1.0f
+                                   constant:0.f];
+        //Right
+        NSLayoutConstraint *right = [NSLayoutConstraint
+                                   constraintWithItem:self.contentView
+                                   attribute:NSLayoutAttributeRight
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:self.popUpView.contentView
+                                   attribute:NSLayoutAttributeRight
+                                   multiplier:1.0f
+                                   constant:0.f];
+        [self.popUpView.contentView addConstraints:@[top, left, bottom, right]];
+        [self.contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
         
         self.doneBlock = doneBlock;
         self.dismissBlock = dismissBlock;

@@ -11,6 +11,8 @@
 
 @interface TMPopUpView : UIView
 
+@property (nonatomic, strong, readonly) UIView *contentView;
+
 - (void)showWithFrame:(CGRect)frame
            anglePoint:(CGPoint)anglePoint
        arrowDirection:(TMPopOverMenuArrowDirection)arrowDirection

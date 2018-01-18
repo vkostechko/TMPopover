@@ -26,6 +26,7 @@
             doneBlock:(TMPopoverDoneBlock)doneBlock
 {
     self.frame = frame;
+    
     _arrowDirection = arrowDirection;
     self.doneBlock = doneBlock;
     
@@ -37,7 +38,68 @@
     [self drawBackgroundLayerWithAnglePoint:anglePoint];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame])
+    {
+        [self constructUI];
+    }
+    return self;
+}
+
 #pragma mark - Private
+
+- (void)constructUI
+{
+    _contentView = [UIView new];
+    _contentView.backgroundColor = [UIColor whiteColor];
+    _contentView.layer.cornerRadius = TM_DEFAULT_CORNER_RADIUS;
+    _contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    _contentView.clipsToBounds = YES;
+    [self addSubview:_contentView];
+    
+    /*
+     // Add constraints
+     */
+    
+    //Bottom
+    NSLayoutConstraint *bottom = [NSLayoutConstraint
+                                  constraintWithItem:self.contentView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                  toItem:self
+                                  attribute:NSLayoutAttributeBottom
+                                  multiplier:1.0f
+                                  constant:0.f];
+    //Top
+    NSLayoutConstraint *top = [NSLayoutConstraint
+                               constraintWithItem:self.contentView
+                               attribute:NSLayoutAttributeTop
+                               relatedBy:NSLayoutRelationEqual
+                               toItem:self
+                               attribute:NSLayoutAttributeTop
+                               multiplier:1.0f
+                               constant:TM_DEFAULT_ARROW_HEIGHT];
+    //Left
+    NSLayoutConstraint *left = [NSLayoutConstraint
+                                constraintWithItem:self.contentView
+                                attribute:NSLayoutAttributeLeft
+                                relatedBy:NSLayoutRelationEqual
+                                toItem:self
+                                attribute:NSLayoutAttributeLeft
+                                multiplier:1.0f
+                                constant:0.f];
+    //Right
+    NSLayoutConstraint *right = [NSLayoutConstraint
+                                 constraintWithItem:self.contentView
+                                 attribute:NSLayoutAttributeRight
+                                 relatedBy:NSLayoutRelationEqual
+                                 toItem:self
+                                 attribute:NSLayoutAttributeRight
+                                 multiplier:1.0f
+                                 constant:0.f];
+    [self addConstraints:@[top, left, bottom, right]];
+}
 
 - (void)drawBackgroundLayerWithAnglePoint:(CGPoint)anglePoint
 {
@@ -95,9 +157,13 @@
     _backgroundLayer = [CAShapeLayer layer];
     _backgroundLayer.path = path.CGPath;
     _backgroundLayer.lineWidth = TM_DEFAULT_BORDER_WIDTH;
-    _backgroundLayer.fillColor = [UIColor greenColor].CGColor;
-    _backgroundLayer.strokeColor = [UIColor redColor].CGColor;
+    _backgroundLayer.fillColor = [UIColor whiteColor].CGColor;
+    _backgroundLayer.strokeColor = [UIColor blackColor].CGColor;
+    
     [self.layer insertSublayer:_backgroundLayer atIndex:0];
+    
+    self.layer.cornerRadius = TM_DEFAULT_CORNER_RADIUS;
+    
 }
 
 - (CGFloat)menuArrowHeight

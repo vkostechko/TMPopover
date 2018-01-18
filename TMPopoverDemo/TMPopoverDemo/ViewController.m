@@ -20,7 +20,7 @@
 - (IBAction)showButtonDidTap:(id)sender {
 
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300.f, 150.f)];
-    contentView.backgroundColor = [UIColor purpleColor];
+    contentView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3f];
     
     [TMPopover showForSender:sender withCustomView:contentView doneBlock:^(NSInteger selectedIndex) {
         
