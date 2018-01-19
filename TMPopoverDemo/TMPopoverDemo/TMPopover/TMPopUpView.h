@@ -19,6 +19,6 @@
 - (void)showWithFrame:(CGRect)frame
            anglePoint:(CGPoint)anglePoint
        arrowDirection:(TMPopOverMenuArrowDirection)arrowDirection
-            doneBlock:(TMPopoverDoneBlock)doneBlock;
+         dismissBlock:(TMPopoverDismissBlock)doneBlock;
 
 @end

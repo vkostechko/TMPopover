@@ -11,7 +11,7 @@
 @interface TMPopUpView()
 
 @property (nonatomic, assign) TMPopOverMenuArrowDirection arrowDirection;
-@property (nonatomic, strong) TMPopoverDoneBlock doneBlock;
+@property (nonatomic, strong) TMPopoverDismissBlock dismissBlock;
 @property (nonatomic, strong) CAShapeLayer *backgroundLayer;
 
 @end
@@ -23,12 +23,12 @@
 - (void)showWithFrame:(CGRect)frame
            anglePoint:(CGPoint)anglePoint
        arrowDirection:(TMPopOverMenuArrowDirection)arrowDirection
-            doneBlock:(TMPopoverDoneBlock)doneBlock
+         dismissBlock:(TMPopoverDismissBlock)doneBlock
 {
     self.frame = frame;
     
     _arrowDirection = arrowDirection;
-    self.doneBlock = doneBlock;
+    self.dismissBlock = doneBlock;
     
     CGRect menuRect = CGRectMake(0, self.menuArrowHeight, self.frame.size.width, self.frame.size.height - self.menuArrowHeight);
     if (_arrowDirection == TMPopOverMenuArrowDirectionDown) {

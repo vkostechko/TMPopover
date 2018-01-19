@@ -266,12 +266,9 @@
     }
     _popUpView.transform = CGAffineTransformMakeScale(1, 1);
     
-    [_popUpView showWithFrame:menuRect
-                   anglePoint:menuArrowPoint
-               arrowDirection:arrowDirection
-                    doneBlock:^{
-                        [self dismissAction];
-                    }];
+    [_popUpView showWithFrame:menuRect anglePoint:menuArrowPoint arrowDirection:arrowDirection dismissBlock:^{
+        [self dismissAction];
+    }];
     
     [self setAnchorPoint:anchorPoint forView:_popUpView];
     
