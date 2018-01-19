@@ -11,7 +11,7 @@
 
 @interface TMPopover : NSObject
 
-+ (void)showForSender:(UIView *)sender withCustomView:(UIView *)contentView size:(CGSize)size doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock;
++ (void)showForSender:(UIView *)sender withCustomView:(UIView *)contentView size:(CGSize)size dismissBlock:(TMPopoverDismissBlock)dismissBlock;
 
 + (void)dismiss;
 

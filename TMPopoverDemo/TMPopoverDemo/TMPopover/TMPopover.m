@@ -13,7 +13,6 @@
 
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) TMPopUpView *popUpView;
-@property (nonatomic, copy) TMPopoverDoneBlock doneBlock;
 @property (nonatomic, copy) TMPopoverDismissBlock dismissBlock;
 
 @property (nonatomic, strong) UIView *sender;
@@ -62,9 +61,9 @@
 
 #pragma mark - Public
 
-+ (void)showForSender:(UIView *)sender withCustomView:(UIView *)contentView size:(CGSize)size doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock
++ (void)showForSender:(UIView *)sender withCustomView:(UIView *)contentView size:(CGSize)size dismissBlock:(TMPopoverDismissBlock)dismissBlock
 {
-    [[self sharedInstance] showForSender:sender size:size contentView:contentView doneBlock:doneBlock dismissBlock:dismissBlock];
+    [[self sharedInstance] showForSender:sender size:size contentView:contentView dismissBlock:dismissBlock];
 }
 
 + (void)dismiss
@@ -85,7 +84,7 @@
 
 #pragma mark - Private
 
-- (void) showForSender:(UIView *)sender size:(CGSize)size contentView:(UIView *)contentView doneBlock:(TMPopoverDoneBlock)doneBlock dismissBlock:(TMPopoverDismissBlock)dismissBlock
+- (void) showForSender:(UIView *)sender size:(CGSize)size contentView:(UIView *)contentView dismissBlock:(TMPopoverDismissBlock)dismissBlock
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.backgroundView addSubview:self.popUpView];
@@ -136,7 +135,6 @@
         [self.popUpView.contentView addConstraints:@[top, left, bottom, right]];
         [self.contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
         
-        self.doneBlock = doneBlock;
         self.dismissBlock = dismissBlock;
         
         [self adjustPopOverMenu];
@@ -147,9 +145,8 @@
 
 - (void)dismiss
 {
-#warning NOT IMPLEMENTED
     self.isCurrentlyOnScreen = NO;
-    [self doneActionWithSelectedIndex:-1];
+    [self dismissAction];
 }
 
 #pragma mark - Private properties
@@ -272,8 +269,8 @@
     [_popUpView showWithFrame:menuRect
                    anglePoint:menuArrowPoint
                arrowDirection:arrowDirection
-                    doneBlock:^(NSInteger selectedIndex) {
-                        [self doneActionWithSelectedIndex:selectedIndex];
+                    doneBlock:^{
+                        [self dismissAction];
                     }];
     
     [self setAnchorPoint:anchorPoint forView:_popUpView];
@@ -313,7 +310,7 @@
                      }];
 }
 
-- (void)doneActionWithSelectedIndex:(NSInteger)selectedIndex
+- (void)dismissAction
 {
     [UIView animateWithDuration:TM_DEFAULT_ANIMATION_DURATION
                      animations:^{
@@ -323,14 +320,8 @@
                          if (finished) {
                              [self.popUpView removeFromSuperview];
                              [self.backgroundView removeFromSuperview];
-                             if (selectedIndex < 0) {
-                                 if (self.dismissBlock) {
-                                     self.dismissBlock();
-                                 }
-                             } else {
-                                 if (self.doneBlock) {
-                                     self.doneBlock(selectedIndex);
-                                 }
+                             if (self.dismissBlock) {
+                                 self.dismissBlock();
                              }
                          }
                      }];

@@ -34,10 +34,8 @@
     
     [contentView registerClass:[TMTableViewCell class] forCellReuseIdentifier:@"TMTableViewCell"];
     
-    [TMPopover showForSender:sender withCustomView:contentView size:CGSizeMake(230.f, 150.f) doneBlock:^(NSInteger selectedIndex) {
-        
-    } dismissBlock:^{
-        
+    [TMPopover showForSender:sender withCustomView:contentView size:CGSizeMake(230.f, 150.f) dismissBlock:^{
+        NSLog(@"dismissBlock");
     }];
 }
 

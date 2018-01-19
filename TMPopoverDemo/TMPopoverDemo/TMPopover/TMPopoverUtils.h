@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^TMPopoverDoneBlock)(NSInteger selectedIndex);
+typedef void (^TMPopoverDoneBlock)(void);
 typedef void (^TMPopoverDismissBlock)(void);
 
 typedef NS_ENUM(NSUInteger, TMPopOverMenuArrowDirection) {
