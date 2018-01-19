@@ -8,19 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		2F01284820114DBC004E35A3 /* TMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F01284720114DBC004E35A3 /* TMTableViewCell.m */; };
+		2F1772992011E2A40061766A /* TMPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1772952011E2A40061766A /* TMPopover.m */; };
+		2F17729A2011E2A40061766A /* TMPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1772962011E2A40061766A /* TMPopUpView.m */; };
 		2FB3B49320110E920045F7EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B49220110E920045F7EC /* AppDelegate.m */; };
 		2FB3B49620110E920045F7EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B49520110E920045F7EC /* ViewController.m */; };
 		2FB3B49920110E920045F7EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3B49720110E920045F7EC /* Main.storyboard */; };
 		2FB3B49B20110E920045F7EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3B49A20110E920045F7EC /* Assets.xcassets */; };
 		2FB3B49E20110E920045F7EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB3B49C20110E920045F7EC /* LaunchScreen.storyboard */; };
 		2FB3B4A120110E920045F7EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B4A020110E920045F7EC /* main.m */; };
-		2FB3B4AD20110ECC0045F7EC /* TMPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B4AB20110ECC0045F7EC /* TMPopover.m */; };
-		2FB3B4AE20110ECC0045F7EC /* TMPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB3B4AC20110ECC0045F7EC /* TMPopUpView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F01284620114DBC004E35A3 /* TMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMTableViewCell.h; sourceTree = "<group>"; };
 		2F01284720114DBC004E35A3 /* TMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMTableViewCell.m; sourceTree = "<group>"; };
+		2F1772942011E2A40061766A /* TMPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPopUpView.h; sourceTree = "<group>"; };
+		2F1772952011E2A40061766A /* TMPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPopover.m; sourceTree = "<group>"; };
+		2F1772962011E2A40061766A /* TMPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPopUpView.m; sourceTree = "<group>"; };
+		2F1772972011E2A40061766A /* TMPopoverUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPopoverUtils.h; sourceTree = "<group>"; };
+		2F1772982011E2A40061766A /* TMPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPopover.h; sourceTree = "<group>"; };
 		2FB3B48E20110E920045F7EC /* TMPopoverDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMPopoverDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB3B49120110E920045F7EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FB3B49220110E920045F7EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,11 +36,6 @@
 		2FB3B49D20110E920045F7EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FB3B49F20110E920045F7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FB3B4A020110E920045F7EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2FB3B4A820110ECC0045F7EC /* TMPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPopUpView.h; sourceTree = "<group>"; };
-		2FB3B4A920110ECC0045F7EC /* TMPopoverUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPopoverUtils.h; sourceTree = "<group>"; };
-		2FB3B4AA20110ECC0045F7EC /* TMPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPopover.h; sourceTree = "<group>"; };
-		2FB3B4AB20110ECC0045F7EC /* TMPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPopover.m; sourceTree = "<group>"; };
-		2FB3B4AC20110ECC0045F7EC /* TMPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPopUpView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1772932011E2A40061766A /* TMPopover */ = {
+			isa = PBXGroup;
+			children = (
+				2F1772942011E2A40061766A /* TMPopUpView.h */,
+				2F1772952011E2A40061766A /* TMPopover.m */,
+				2F1772962011E2A40061766A /* TMPopUpView.m */,
+				2F1772972011E2A40061766A /* TMPopoverUtils.h */,
+				2F1772982011E2A40061766A /* TMPopover.h */,
+			);
+			name = TMPopover;
+			path = ../../TMPopover;
+			sourceTree = "<group>";
+		};
 		2FB3B48520110E920045F7EC = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +81,7 @@
 		2FB3B49020110E920045F7EC /* TMPopoverDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2FB3B4A720110EAC0045F7EC /* TMPopover */,
+				2F1772932011E2A40061766A /* TMPopover */,
 				2FB3B49120110E920045F7EC /* AppDelegate.h */,
 				2FB3B49220110E920045F7EC /* AppDelegate.m */,
 				2F01284620114DBC004E35A3 /* TMTableViewCell.h */,
@@ -82,18 +95,6 @@
 				2FB3B4A020110E920045F7EC /* main.m */,
 			);
 			path = TMPopoverDemo;
-			sourceTree = "<group>";
-		};
-		2FB3B4A720110EAC0045F7EC /* TMPopover */ = {
-			isa = PBXGroup;
-			children = (
-				2FB3B4A920110ECC0045F7EC /* TMPopoverUtils.h */,
-				2FB3B4AA20110ECC0045F7EC /* TMPopover.h */,
-				2FB3B4AB20110ECC0045F7EC /* TMPopover.m */,
-				2FB3B4A820110ECC0045F7EC /* TMPopUpView.h */,
-				2FB3B4AC20110ECC0045F7EC /* TMPopUpView.m */,
-			);
-			path = TMPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,11 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FB3B4AE20110ECC0045F7EC /* TMPopUpView.m in Sources */,
+				2F17729A2011E2A40061766A /* TMPopUpView.m in Sources */,
 				2FB3B49620110E920045F7EC /* ViewController.m in Sources */,
 				2F01284820114DBC004E35A3 /* TMTableViewCell.m in Sources */,
+				2F1772992011E2A40061766A /* TMPopover.m in Sources */,
 				2FB3B4A120110E920045F7EC /* main.m in Sources */,
-				2FB3B4AD20110ECC0045F7EC /* TMPopover.m in Sources */,
 				2FB3B49320110E920045F7EC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
