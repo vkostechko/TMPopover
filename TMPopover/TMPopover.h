@@ -15,4 +15,6 @@
 
 + (void)dismiss;
 
++ (BOOL)isVisible;
+
 @end

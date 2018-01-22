@@ -71,15 +71,23 @@
     [[self sharedInstance] dismiss];
 }
 
++ (BOOL)isVisible
+{
+    return [[self sharedInstance] isCurrentlyOnScreen];
+}
+
 #pragma mark - Notifications handlers
 
 - (void)onChangeStatusBarOrientationNotification:(NSNotification *)notification
 {
+    // do nothing atm.
+    /*
     if (self.isCurrentlyOnScreen) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self adjustPopOverMenu];
         });
     }
+     */
 }
 
 #pragma mark - Private
@@ -92,7 +100,7 @@
         
         self.sender = sender;
         self.senderFrame = CGRectNull;
-        self.menuSize = size;
+        self.menuSize = CGSizeMake(size.width, size.height + 2 * [self menuArrowHeight]);
         self.contentView = contentView;
         [self.popUpView.contentView addSubview:self.contentView];
         
