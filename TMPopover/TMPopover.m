@@ -325,6 +325,11 @@
                          if (finished) {
                              [self.popUpView removeFromSuperview];
                              [self.backgroundView removeFromSuperview];
+                             [self.contentView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull view, NSUInteger idx, BOOL * _Nonnull stop) {
+                                 [view removeFromSuperview];
+                             }];
+                             [self.contentView removeFromSuperview];
+                             self.contentView = nil;
                              if (self.dismissBlock) {
                                  self.dismissBlock();
                              }
