@@ -80,14 +80,11 @@
 
 - (void)onChangeStatusBarOrientationNotification:(NSNotification *)notification
 {
-    // do nothing atm.
-    /*
     if (self.isCurrentlyOnScreen) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self adjustPopOverMenu];
         });
     }
-     */
 }
 
 #pragma mark - Private
@@ -330,6 +327,7 @@
                              }];
                              [self.contentView removeFromSuperview];
                              self.contentView = nil;
+                             self.sender = nil;
                              if (self.dismissBlock) {
                                  self.dismissBlock();
                              }
